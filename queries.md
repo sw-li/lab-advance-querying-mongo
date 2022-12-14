@@ -114,6 +114,6 @@ Filter: {"acquisition.acquired_month":{$lt:4}}
 Projection: {name: 1, \_id:0, acquisition:1}
 
 ### 19. All the companies that have been founded between 2000 and 2010, but have not been acquired before 2011.
-db.companies.find({$and:[{founded_year:{$gte:2000},{founded_year:{$lte:2010}},{$or:[{"acquisitions.0.acquired_year":{$gte:2011}},{acquisitions:"null"}]}]})
+db.companies.find({$and:[{founded_year:{$gte:2000}},{founded_year:{$lte:2010}},{$or:[{"acquisitions.0.acquired_year":{$gte:2011}},{acquisitions:"null"}]}]})
 
 Filter: {$and:[{founded_year:{$gte:2000},{founded_year:{$lte:2010}},{$or:[{"acquisitions.0.acquired_year":{$gte:2011}},{acquisitions:"null"}]}]}
